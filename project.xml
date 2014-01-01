@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+
+  <meta title="LindenStartappSample" package="ru.zzzzzzerg.linden.samples.startapp" version="1.0.0" company="Company Name" />
+  <app main="Main" path="Export" file="LindenStartappSample" />
+
+  <source path="Source" />
+
+  <haxelib name="openfl" />
+  <haxelib name="linden-startapp" />
+
+  <assets path="Assets" rename="assets" exclude="openfl.svg" />
+  <icon path="Assets/openfl.svg" />
+
+  <!-- linden-startapp -->
+  <template path="AndroidManifest.xml" if="android" />
+  <!-- / -->
+
+  <android target-sdk-version="19" minimum-sdk-version="14" if="android" />
+
+
+</project>
