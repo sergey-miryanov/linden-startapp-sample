@@ -27,6 +27,8 @@ class Main extends Sprite {
   var _splash : Btn;
   var _interstitial : Btn;
   var _interstitialBackButton : Btn;
+  var _showBanner : Btn;
+  var _hideBanner : Btn;
 
   public function new () {
 
@@ -37,6 +39,8 @@ class Main extends Sprite {
     _splash = new Btn("assets/btn1.png", "Show Splash");
     _interstitial = new Btn("assets/btn2.png", "Show Interstitial");
     _interstitialBackButton = new Btn("assets/btn3.png", "Show Interstitial (BackButton)");
+    _showBanner = new Btn("assets/btn4.png", "Show Banner");
+    _hideBanner = new Btn("assets/btn4.png", "Hide Banner");
 
     _splash.addEventListener(MouseEvent.CLICK, showSplashScreen);
     _splash.x = 50;
@@ -44,16 +48,25 @@ class Main extends Sprite {
 
     _interstitial.addEventListener(MouseEvent.CLICK, showInterstitial);
     _interstitial.x = 50;
-    _interstitial.y = 250;
+    _interstitial.y = 150;
 
     _interstitialBackButton.addEventListener(MouseEvent.CLICK, showInterstitialBackButton);
     _interstitialBackButton.x = 50;
-    _interstitialBackButton.y = 450;
+    _interstitialBackButton.y = 250;
 
+    _showBanner.addEventListener(MouseEvent.CLICK, showBanner);
+    _showBanner.x = 50;
+    _showBanner.y = 350;
+
+    _hideBanner.addEventListener(MouseEvent.CLICK, hideBanner);
+    _hideBanner.x = 250;
+    _hideBanner.y = 350;
 
     addChild(_splash);
     addChild(_interstitial);
     addChild(_interstitialBackButton);
+    addChild(_showBanner);
+    addChild(_hideBanner);
 
     //stage.addEventListener(KeyboardEvent.KEY_UP, onKeyUp);
   }
@@ -81,6 +94,16 @@ class Main extends Sprite {
   function showInterstitialBackButton(e : MouseEvent)
   {
     StartApp.showInterstitialBackButton();
+  }
+
+  function showBanner(e : MouseEvent)
+  {
+    StartApp.showBanner(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+  }
+
+  function hideBanner(e : MouseEvent)
+  {
+    StartApp.hideBanner();
   }
 
 
