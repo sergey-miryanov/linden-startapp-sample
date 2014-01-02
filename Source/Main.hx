@@ -98,18 +98,12 @@ class Main extends Sprite {
 
   function showBanner(e : MouseEvent)
   {
-    if(!StartApp.showBanner(Gravity.TOP | Gravity.CENTER_HORIZONTAL))
-    {
-      trace("Banner alreay shown");
-    }
+    StartApp.showBanner(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
   }
 
   function hideBanner(e : MouseEvent)
   {
-    if(!StartApp.hideBanner())
-    {
-      trace("Banner not shown yet");
-    }
+    StartApp.hideBanner();
   }
 
 
